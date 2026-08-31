@@ -6,7 +6,7 @@ RUN mvn package
 FROM eclipse-temurin:21-alpine
 LABEL author=shaikkhajaibrahim
 LABEL project=learning
-LABEL version=3.3.0
+LABEL version=4.0.0
 RUN adduser -D -h /app -s /bin/sh spc
 USER spc
 EXPOSE 8080
