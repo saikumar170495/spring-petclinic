@@ -1,0 +1,19 @@
+---
+    # This workflow will run on every pull request to the main branch.
+    name: PR Workflow
+    on:
+      pull_request:
+        branches:
+          - dev
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+            - name: compile
+              run: mvn compile
+            - name: run tests
+              run: mvn test
+            - name: create the package
+              run: mvn package
